@@ -1,0 +1,26 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ion-card-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+ion-button {
+  --background: #3880ff;
+  --border-radius: 8px;
+}
+
+
