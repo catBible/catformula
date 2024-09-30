@@ -1,26 +1,25 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
 .login-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
-ion-card {
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
 }
 
-ion-card-title {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+ion-item {
+  margin-bottom: 15px;
 }
 
 ion-button {
-  --background: #3880ff;
-  --border-radius: 8px;
+  margin-top: 20px;
 }
-
-

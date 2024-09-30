@@ -5,22 +5,20 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form (submit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">User Code</ion-label>
-      <ion-input [(ngModel)]="user_code" name="user_code" type="text" required></ion-input>
-    </ion-item>
+  <div class="login-container">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <form (submit)="onSubmit()" class="login-form">
+      <ion-item>
+        <ion-label position="floating">User Code</ion-label>
+        <ion-input [(ngModel)]="user_code" name="user_code" type="text" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input [(ngModel)]="user_password" name="user_password" type="password" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="user_password" name="user_password" type="password" required></ion-input>
+      </ion-item>
 
-    <ion-button expand="block" type="submit">Login</ion-button>
-  </form>
+      <ion-button expand="block" type="submit">Login</ion-button>
+    </form>
+  </div>
 </ion-content>
-
-
-
-
-

@@ -16,8 +16,10 @@ export class UserService {
   }
 
   // ดึงข้อมูลผู้ใช้ตาม user_code
-  getUserByCode(user_code: string): Observable<any[]> {
-    return this.firestore.collection(this.userCollection, ref => ref.where('user_code', '==', user_code)).valueChanges();
+  getUserByCodeAndPassword(user_code: string, user_password: string): Observable<any[]> {
+    return this.firestore.collection(this.userCollection, ref =>
+      ref.where('user_code', '==', user_code).where('user_password', '==', user_password)
+    ).valueChanges();
   }
 
   // เพิ่มผู้ใช้ใหม่

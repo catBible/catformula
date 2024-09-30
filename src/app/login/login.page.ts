@@ -13,25 +13,17 @@ export class LoginPage {
 
   constructor(private userService: UserService, private alertController: AlertController) {}
 
-  async onSubmit() {
-    if (!this.user_code || !this.user_password) {
-      this.showAlert('Error', 'Please fill in both fields.');
-      return;
-    }
-
-    // ดึงข้อมูลผู้ใช้ตาม user_code
-    this.userService.getUserByCode(this.user_code).subscribe(users => {
+  onSubmit() {
+    this.userService.getUserByCodeAndPassword(this.user_code, this.user_password).subscribe((users: any[]) => {
+      console.log('this.userService', users);
       if (users.length === 0) {
-        this.showAlert('Error', 'User not found');
+        this.showAlert('Error', 'User not found or incorrect password');
         return;
       }
 
-      const user = users[0];  // สมมุติว่ามีเพียง 1 ผู้ใช้ที่ตรงกับ user_code
-      if (user['user_password'] === this.user_password) {
-        this.showAlert('Success', 'Login successful!');
-      } else {
-        this.showAlert('Error', 'Incorrect password');
-      }
+      const user = users[0];  // สมมุติว่ามีเพียง 1 ผู้ใช้ที่ตรงกับ user_code และ user_password
+      console.log('user33', user);
+      this.showAlert('Success', 'Login successful!');
     });
   }
 
